@@ -22,16 +22,12 @@ export const MovieProvider = ({children}) => {
     const filterBySearch = movieState.search !== ""
         ? movieState
             .allMovies
-            .filter((item) => item.title.toLowerCase().includes(movieState.search.toLowerCase()))
+            .filter((item) => item.title.toLowerCase().includes(movieState.search.toLowerCase()) || item.director.toLowerCase().includes(movieState.search.toLowerCase()))
         : movieState.search !== ""
             ? movieState
                 .allMovies
                 .filter((item) => item.cast.toLowerCase().includes(movieState.search.toLowerCase()))
-            : movieState.search !== ""
-                ? movieState
-                    .allMovies
-                    .filter((item) => item.director.toLowerCase().includes(movieState.search.toLowerCase()))
-                : movieState.allMovies;
+            : movieState.allMovies;
 
     const filterByGenre = (movieState.genre !== "All Genre")
         ? filterBySearch.filter((item) => item.genre.includes(movieState.genre))
