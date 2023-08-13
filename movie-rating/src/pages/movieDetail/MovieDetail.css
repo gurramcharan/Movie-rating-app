@@ -1,0 +1,22 @@
+.movie-main-container{
+    display: flex;
+    justify-content: center;
+}
+
+.movie-sub-container{
+    width: 800px;
+    height: 500px;
+    box-shadow: 0 0 0.1rem rgba(0,0,0,0.5);
+    padding: 1rem;
+    margin: 4rem;
+}
+
+.movie-container{
+    display: flex;
+    gap: 1rem;
+}
+
+.movie-btn-container{
+    display: flex;
+    justify-content: space-between;
+}
