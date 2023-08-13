@@ -32,20 +32,27 @@ export const Movies = () => {
                 </select>
                 <button style={{backgroundColor:"gray", color:"white", border:"none", padding:"0.5rem 1rem", borderRadius:"5px", cursor:"pointer"}} onClick={() => navigate("/addmovie")}>Add Movie</button>
             </div>
-            {movieState.allMovies.length !== 0
+            {filteredProducts.length !== 0
                 ? (
                     <div className='flex-row gap2 wrap margin2'>
                         {filteredProducts
                             .map(item => (
                                 <div key={item.id}>
                                     <MovieCard movie={item}/>
+                                    {console.log(filteredProducts.length)}
                                 </div>
                             ))}
                     </div>
                 )
                 : (
                     <div>
-                        <p>No Movies Found</p>
+                        <p
+                            style={{
+                            textAlign: "center",
+                            fontSize: "40px",
+                            color: "gray",
+                            fontWeight: "400"
+                        }}>...No Movies Found...</p>
                     </div>
                 )}
         </div>
